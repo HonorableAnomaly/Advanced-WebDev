@@ -1,0 +1,26 @@
+.box:hover {
+  animation-name: changeColor;
+  animation-delay: 2s;
+  animation-duration: 3s;
+}
+
+.forwards {
+  animation-fill-mode: forwards;
+}
+
+.backwards {
+  animation-fill-mode: backwards;
+}
+
+.both {
+  animation-fill-mode: both;
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: #f1c40f;
+  }
+  100% {
+    background-color: #e74c3c;
+  }
+}

@@ -1,0 +1,42 @@
+.box {
+  background: #9b59b6;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* .animated {
+  transition-property: transform, border-radius;
+  transition-duration: 1s;
+  transition-delay: 0.5s, 1.5s;
+}
+
+.box:hover {
+  background: #e74ec3;
+  transform: scale(3) rotate(360deg);
+  opacity: 0.4;
+  color: black;
+  border-radius: 50px;
+} */
+
+/* .animated {
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 1s;
+} */
+
+/* Shorthand CSS from above + more properties */
+.animated {
+  transition: transform 2s ease-in-out 1s, background-color 0.5s linear 1s;
+}
+
+.box:hover {
+  transform: translateX(300px);
+  background-color: aqua;
+}
