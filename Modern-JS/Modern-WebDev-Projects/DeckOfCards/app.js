@@ -21,7 +21,7 @@
 const myDeck = {
   deck: [],
   suits: ["Hearts", "Spades", "Diamonds", "Clubs"],
-  values: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"],
+  values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
   initializeDeck() {
     const { suits, values, deck } = this;
     for (let value of values.split(",")) {
@@ -29,9 +29,28 @@ const myDeck = {
         deck.push({ value, suit });
       }
     }
-    return deck;
+    // return deck;
   },
   drawCard() {
-    return this.deck.pop();
+    const card = this.deck.pop();
+    this.drawnCards.push(card);
+    return card;
+  },
+  drawMany(numCards) {
+    const cards = [];
+    for (let i = 0; i < numCards; i++) {
+      cards.push(this.drawCard());
+    }
+    return cards;
+  },
+  shuffle(arr) {
+    const { deck } = this;
+    // Loop over array backwards
+    for (let i = deck.length - 1; i > 0; i--) {
+      // Pick random index before current element
+      let j = Math.floor(Math.random() * (i + 1));
+      // Swap elements
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
   },
 };
