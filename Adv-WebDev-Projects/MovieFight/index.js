@@ -17,7 +17,7 @@ const root = document.querySelector(".autocomplete");
 root.innerHTML = `
 <label><b>Search for a movie</b></label>
 <input class="input"></input>
-<div class="dropdown>
+<div class="dropdown">
     <div class="dropdown-menu">
         <div class="dropdown-content results"></div>
     </div>
@@ -35,14 +35,32 @@ const resultsWrapper = document.querySelector(".results");
 
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value);
+
+  if (!movies.length) {
+    dropdown.classList.remove("is-active");
+    return;
+  }
+
+  resultsWrapper.innerHTML = "";
+  dropdown.classList.add("is-active");
   for (let movie of movies) {
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <img src="${movie.Poster}"/>
-    <h1>${movie.Title}</h1>`;
-    document.querySelector("#target").appendChild(div);
+    const option = document.createElement("a");
+    const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
+
+    option.classList.add("dropdown-item");
+    option.innerHTML = `
+    <img src="${imgSrc}" />
+    ${movie.Title}`;
+
+    resultsWrapper.appendChild(option);
   }
 };
 
 // Add debounce as a wrapper to onInput as a second example
 input.addEventListener("input", debounce(onInput, 500));
+
+document.addEventListener("click", (event) => {
+  if (!root.contains(event.target)) {
+    dropdown.classList.remove("is-active");
+  }
+});
