@@ -1,2 +1,2 @@
 # Advanced-WebDev
-Advanced CSS, modern JavaScript and other technologies for web development
+React and Redux, Advanced CSS, modern JavaScript and other technologies for web development
