@@ -1,3 +1,14 @@
 #!/usr/bin/env node
 
-console.log("I was executed... by Node. Avenge me!");
+const debounce = require("lodash.debounce");
+const chokidar = require("chokidar");
+
+const start = debounce(() => {
+  console.log("Serving...");
+}, 100);
+
+chokidar
+  .watch(".")
+  .on("add", start)
+  .on("change", () => console.log("FILE CHANGED"))
+  .on("unlink", () => console.log("FILE UNLINKED"));
