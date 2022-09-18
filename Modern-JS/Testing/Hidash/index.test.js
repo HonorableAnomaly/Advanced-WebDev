@@ -4,17 +4,20 @@ const { forEach, map } = require("./index");
 
 // Reusable test function to escape global scope for variables
 // Includes a try catch so that all tests still run
-const test = (desc, func) => {
-  console.log("---", desc);
-  try {
-    func();
-  } catch (err) {
-    console.log(err.message);
-  }
-};
+
+// Comment out 'test' function when using Mocha and change 'test' to 'it' at other  functions
+
+// const test = (desc, func) => {
+//   console.log("---", desc);
+//   try {
+//     func();
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// };
 
 // forEach test
-test("The forEach function", () => {
+it("The forEach function", () => {
   let sum = 0;
   forEach([1, 2, 3], (value) => {
     sum += value;
@@ -29,7 +32,7 @@ test("The forEach function", () => {
 });
 
 // map test
-test("The map function", () => {
+it("The map function", () => {
   const result = map([1, 2, 3], (value) => {
     return value * 2;
   });
