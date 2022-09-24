@@ -12,7 +12,8 @@ class NumberList extends Component {
     }));
   }
   render() {
-    let nums = this.state.nums.map((n) => <NumberItem value={n} remove={() => this.remove(n)} />);
+    // 'n' used as the key
+    let nums = this.state.nums.map((n) => <NumberItem key={n} value={n} remove={() => this.remove(n)} />);
     return (
       <div>
         <h1>Number List</h1>
