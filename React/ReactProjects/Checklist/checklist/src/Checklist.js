@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewToDoForm from "./NewToDoForm";
 import ToDo from "./ToDo";
+import "./Checklist.css";
 
 export default class Checklist extends Component {
   constructor(props) {
@@ -58,10 +59,12 @@ export default class Checklist extends Component {
       );
     });
     return (
-      <div>
-        <h1>Checklist</h1>
-        <NewToDoForm createTask={this.create} />
+      <div className="Checklist">
+        <h1>
+          React Checklist <span>A simple React checklist</span>
+        </h1>
         <ul>{tasks}</ul>
+        <NewToDoForm createTask={this.create} />
       </div>
     );
   }
