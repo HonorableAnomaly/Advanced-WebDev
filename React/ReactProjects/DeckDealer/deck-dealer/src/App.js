@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import Deck from "./Deck";
 import "./App.css";
+import "./Card.css";
 
 function App() {
   return (
