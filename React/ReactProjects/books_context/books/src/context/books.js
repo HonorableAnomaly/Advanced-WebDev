@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import axios from "axios";
-import BookCreate from "./components/BookCreate";
-import BookList from "./components/BookList";
 
-function App() {
+const BooksContext = createContext();
+
+function Provider({ children }) {
   const [books, setBooks] = useState([]);
 
   const fetchBooks = async () => {
@@ -11,10 +11,6 @@ function App() {
 
     setBooks(res.data);
   };
-
-  useEffect(() => {
-    fetchBooks();
-  }, []);
 
   const editBookById = async (id, newTitle) => {
     const res = await axios.put(`http://localhost:3001/books/${id}`, {
@@ -55,17 +51,16 @@ function App() {
     // setBooks(updatedBooks);
   };
 
-  return (
-    <div className='app'>
-      <h1>Reading List</h1>
-      <BookList
-        books={books}
-        onDelete={deleteBookById}
-        onEdit={editBookById}
-      />
-      <BookCreate onCreate={createBook} />
-    </div>
-  );
+  const valueToShare = {
+    books,
+    createBook,
+    editBookById,
+    deleteBookById,
+    fetchBooks
+  };
+
+  return <BooksContext.Provider value={valueToShare}>{children}</BooksContext.Provider>;
 }
 
-export default App;
+export { Provider };
+export default BooksContext;
