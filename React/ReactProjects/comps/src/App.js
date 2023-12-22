@@ -1,25 +1,38 @@
+import { GoVerified, GoCloud, GoSquirrel, GoAlert, GoXCircle } from "react-icons/go";
 import Button from "./Button";
 
 function App() {
   return (
     <div>
       <div>
-        <Button>Click Me!</Button>
+        <Button primary>
+          <GoVerified />
+          Click Me!
+        </Button>
       </div>
       <div>
-        <Button>Buy Now!</Button>
+        <Button secondary>
+          <GoCloud />
+          Buy Now!
+        </Button>
       </div>
       <div>
-        <Button>See Deal!</Button>
+        <Button success>
+          <GoSquirrel />
+          See Deal!
+        </Button>
       </div>
       <div>
-        <Button>Hide Ads!</Button>
+        <Button warning>
+          <GoAlert />
+          Hide Ads!
+        </Button>
       </div>
       <div>
-        <Button>Update!</Button>
-      </div>
-      <div>
-        <Button>Something!</Button>
+        <Button danger>
+          <GoXCircle />
+          Update!
+        </Button>
       </div>
     </div>
   );
