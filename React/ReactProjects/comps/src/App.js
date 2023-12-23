@@ -1,25 +1,26 @@
-import Accordion from "./components/Accordion";
+import { useState } from "react";
+import Dropdown from "./components/Dropdown";
 
 function App() {
-  const items = [
-    {
-      key: "g5252ff4",
-      label: "Can I haz cheezburgr?",
-      content: "Yes, of course you may! Yes, of course you may! Yes, of course you may! Yes, of course you may! Yes, of course you may! Yes, of course you may!"
-    },
-    {
-      key: "bh47uyj3h",
-      label: "Can I also haz donutz",
-      content:
-        "After you eat your dinner! After you eat your dinner! After you eat your dinner! After you eat your dinner! After you eat your dinner! After you eat your dinner!"
-    },
-    {
-      key: "gav234f2g",
-      label: "Can I also also haz hugz?",
-      content: "Why did you not say so?! Why did you not say so?! Why did you not say so?! Why did you not say so?! Why did you not say so?! Why did you not say so?!"
-    }
+  const [selection, setSelection] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
+
+  const options = [
+    { label: "Red", value: "red" },
+    { label: "Green", value: "green" },
+    { label: "Blue", value: "blue" }
   ];
-  return <Accordion items={items} />;
+
+  return (
+    <Dropdown
+      options={options}
+      value={selection}
+      onChange={handleSelect}
+    />
+  );
 }
 
 export default App;
