@@ -9,3 +9,5 @@ function CarValue() {
 }
 
 export default CarValue;
+
+// Bugged - error shows toLowerCase as not defined
