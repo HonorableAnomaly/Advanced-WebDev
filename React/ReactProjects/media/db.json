@@ -1,5 +1,70 @@
 {
-  "users": [{ "id": 1, "name": "Ricky" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ricky"
+    },
+    {
+      "name": "Maryann Reilly",
+      "id": 2
+    },
+    {
+      "name": "Lori Monahan",
+      "id": 3
+    },
+    {
+      "name": "Kerry Lueilwitz",
+      "id": 4
+    },
+    {
+      "name": "Sylvester Lockman II",
+      "id": 5
+    },
+    {
+      "name": "Douglas Strosin",
+      "id": 6
+    },
+    {
+      "name": "Christian Harvey",
+      "id": 7
+    },
+    {
+      "name": "Ida Waelchi",
+      "id": 8
+    },
+    {
+      "name": "Clyde McGlynn V",
+      "id": 9
+    },
+    {
+      "name": "Clarence Jacobson",
+      "id": 10
+    },
+    {
+      "name": "Keith Heidenreich II",
+      "id": 11
+    },
+    {
+      "name": "Stewart Ratke",
+      "id": 12
+    },
+    {
+      "name": "Jermaine Simonis",
+      "id": 13
+    },
+    {
+      "name": "Jordan Hagenes Jr.",
+      "id": 14
+    },
+    {
+      "name": "Betsy Welch",
+      "id": 15
+    },
+    {
+      "name": "Victor Schmidt",
+      "id": 16
+    }
+  ],
   "albums": [],
   "photos": []
 }
